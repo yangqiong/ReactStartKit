@@ -1,8 +1,10 @@
+const DEBUG = !process.argv.includes('--release');
+
 module.exports = {
     entry: "./src/client.js",
     output: {
         path: "./src",
-        filename: "client.[chunkhash].js"
+        filename: DEBUG ? "client.min.js" : "client.[hash].js"
     },
     module: {
         loaders: [{
