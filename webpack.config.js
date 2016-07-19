@@ -3,5 +3,15 @@ module.exports = {
     output: {
         path: "./src",
         filename: "client.min.js"
+    },
+    module: {
+        loaders: [{
+            test: /\.js/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015']
+            }
+        }]
     }
 }
